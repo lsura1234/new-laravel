@@ -6,6 +6,8 @@
         <title>@yield("title","BikeShop | จำหน่ายอะไหร่จักรยานออนไลน์")</title>
     <link rel = "stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
     <link rel = "stylesheet" href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}">
+    <link rel = "stylesheet" href="{{asset('vendor/toastr/toastr.min.js')}}">
+    <link rel = "stylesheet" href="{{asset('vendor/toastr/toastr.min.css')}}">
     <link rel = "stylesheet" href="{{asset('css/style.css')}}">
     <script src = "{{asset('js/jquery-3.3.1.min.js')}}"></script>
     </head>
