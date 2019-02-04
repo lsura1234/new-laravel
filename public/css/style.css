@@ -1,0 +1,8 @@
+.bs-table{
+    margin:0;
+}
+
+.bs-table thead tr th{
+    color:#fff;
+    background-color: #999;
+}
