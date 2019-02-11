@@ -13,11 +13,12 @@
     <div class="panel panel-default">
 
         <div class="panel panel-heading">
-                @if($errors->any())
-                <div class="alert alert-denger">
-                @foreach ($errors->all() as $error) <div>{{$error}}</div>@endforeach
-                </div>
+            @if($errors->any())
+            <div class="alert alert-danger">
+                    @foreach ($errors->all() as $error)<div>{{ $error }}</div>@endforeach 
+            </div>
             @endif
+            {!! Form::model($product,array('action' => 'ProductController@update','method' => 'post','enctype' => 'multipart/form-data')) !!}
             <strong>ข้อมูลสินค้า</strong>
         </div>
     </div>
@@ -49,6 +50,12 @@
                 <td>{{ Form::label('image','เลือกรูปภาพ')}}</td>
                 <td>{{ Form::file('image' , Input::old('image') , ['class' => 'form-control']) }}</td>
             </tr>
+            @if($product->image_url)
+            <tr>
+                <td><strong>รูปสินค้า</strong></td>
+            <td><img src="{{URL::to($product->image_url)}}" alt="" width="100px"></td>
+            </tr>
+            @endif
         </table>
     </div>
     <div class="panel-footer">

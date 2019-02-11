@@ -4,12 +4,13 @@
         <meta name="viewpoint" content="width-device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>@yield("title","BikeShop | จำหน่ายอะไหร่จักรยานออนไลน์")</title>
-    <link rel = "stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
-    <link rel = "stylesheet" href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}">
-    <link rel = "stylesheet" href="{{asset('vendor/toastr/toastr.min.js')}}">
-    <link rel = "stylesheet" href="{{asset('vendor/toastr/toastr.min.css')}}">
-    <link rel = "stylesheet" href="{{asset('css/style.css')}}">
-    <script src = "{{asset('js/jquery-3.3.1.min.js')}}"></script>
+        <link rel="stylesheet" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('vendor/font-awesome/css/font-awesome.min.css')}}">
+        {{-- <link rel="stylesheet" href="{{asset('css/kmutnb.css')}}"> --}}
+        <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+        <link rel="stylesheet" href="{{asset('vendor/toastr/toastr.min.css')}}">
+        <script src="{{asset('vendor/toastr/toastr.min.js')}}"></script>
+
     </head>
     <body>
         <nav class="navbar-default navbar-static-top">
@@ -24,14 +25,22 @@
                 </ul>
             </div>
         </nav>
-        @yield("content")
+        @yield('content')
+    @if(session('msg'))
+        @if(session('ok'))
+            <script>toastr.success("{{ session('msg') }}")</script>
+        @else
+            <script>toastr.error("{{ session('msg') }}")</script>
+        @endif
+    @endif
+        {{-- @yield("content")
             @if(session('msg'))
                 @if(session('ok'))
                     <script>toastr.success("{{ session('msg') }}")</script>
                 @else 
                     <script>toastr.error("{{ session('msg') }}")</script>
                 @endif
-            @endif
+            @endif --}}
         <script src={{asset('vendor/bootstrap/js/bootstrap.min.js')}}> </script>
         {{-- <div class="panel panel-primary">
             <div class="panel-heading">
@@ -107,6 +116,6 @@
             <div class="form-group">
                 <button class="btn btn-primary">เพิ่มข้อมูล</button>        
             </div> --}}
-    <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+    {{-- <script src="{{asset('vendor/bootstrap/js/bootstrap.min.js')}}"></script> --}}
     </body>
 </html>
