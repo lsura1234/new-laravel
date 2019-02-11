@@ -81,9 +81,9 @@ class ProductController extends Controller
             
             $f->move($absolute_path,$f->getClientOriginalName());
             $product->image_url = $relative_path;
-            $product->save();
+            
         }
-        
+        $product->save();
 
 
         return redirect('product')
